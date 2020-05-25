@@ -1,0 +1,1 @@
+About-Us is written and maintained by [Dmitriy Ivanko](https://github.com/Themanwhosmellslikesugar) and [Vladislav Yarovoy](https://github.com/IrovoyVlad).
