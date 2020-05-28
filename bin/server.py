@@ -18,14 +18,15 @@
 import logging
 
 import aiohttp
-from aiohttp import web
+from aiohttp import web, BasicAuth
 from aiohttp.web_request import Request
 
-from about_us import config
-from about_us import exceptions
+from about_us import config, exceptions
 
 logging.basicConfig(filename=config.LOG_PATH, level=logging.INFO)
 LOGGER = logging.getLogger(__name__)
+
+TOKEN = BasicAuth(config.AUTH_TOKEN)
 
 
 class Handler(web.View):
@@ -35,7 +36,7 @@ class Handler(web.View):
         super().__init__(request)
 
         self._organization_name = ''
-        self.session = aiohttp.ClientSession()
+        self.session = aiohttp.ClientSession(auth=TOKEN)
 
     async def get(self):
         """Return all public info about organization from github. """
