@@ -17,6 +17,8 @@
 
 import os
 
+AUTH_TOKEN = os.getenv('AUTH_TOKEN', '')
+
 HOST = os.getenv('HOST', 'localhost')
 
 LOG_PATH = os.getenv('LOG_PATH', 'about-us.log')
