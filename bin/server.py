@@ -95,7 +95,8 @@ class Handler(web.View):
                 'url': repo['html_url']
             })
 
-        return repositories
+        return sorted(repositories, key=lambda current_repo: current_repo['star_count'],
+                      reverse=True)
 
     async def get_organization_info(self):
         """Request and return info of the organization. """
