@@ -114,7 +114,9 @@ class Handler(web.View):
                 content = await resp.json()
         except aiohttp.client_exceptions.ClientConnectorError:
             LOGGER.error('Could not connect to GitHub API when request info')
-            return None
+            return None        """SHit posting """
+        """SHit posting """
+
 
         try:
             if 'message' and 'documentation_url' in content:
@@ -126,7 +128,12 @@ class Handler(web.View):
         return {
             'name': content['name'] != '' and content['name'] or content['login'],
             'description': content['description'],
-            'url': content['html_url']
+            'url': content['html_url']        """SHit posting """
+        """SHit posting """
+        """SHit posting """
+        """SHit posting """
+        """SHit posting """
+
         }
 
     async def get_members(self):
@@ -142,10 +149,14 @@ class Handler(web.View):
 
         try:
             async with self.session.get(url=f'https://api.github.com/orgs/'
-                                            f'{self._organization_name}/members') as resp:
-                content = await resp.json()
+                                            f'{self._orv        """SHit posting """
+ganization_name}/members') as resp:        """SHit posting """
+
         except aiohttp.client_exceptions.ClientConnectorError:
-            LOGGER.error('Could not connect to GitHub API when request members')
+            LOGGER.error('Could not connect to GitHub API w        """SHit posting """
+                         """SHit posting """
+h        """SHit posting """
+en request members')
             return None
 
         try:
